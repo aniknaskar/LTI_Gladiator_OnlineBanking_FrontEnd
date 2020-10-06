@@ -1,0 +1,410 @@
+<div class="col-xl-12 col-lg-8 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+    <div>
+      <!-- <div class="btn-group btn-group-justified col-xl">
+         
+          <button class="btn btn-danger btn-xl" (click)="home()">Home</button>
+          <button   class="btn btn-info btn-xl1" (click)="newAccount()" >New Account</button>
+           <button   class="btn btn-danger btn-xl" (click)="registerInternetBanking()" >Register Internet Banking</button>
+          <button   class="btn btn-info btn-xl1" (click)="loginCustomer()">Customer Login</button>
+          <button   class="btn btn-danger btn-xl" (click)="loginAdmin()">Admin Login</button> 
+        
+
+        
+      </div> -->
+      <ul>
+        <li><a href="home-page">Home</a></li>
+        <li><a href="account-open">New Account</a></li>
+        <li><a href="register-internet">Register</a></li>
+        <li><a href="customer-login">Login</a></li>
+        <li><a href="admin-login"  >Admin Login</a></li>
+        <label style="float: right; color: aliceblue; padding-top: 0.25cm; font-size: x-large; font-weight: bolder;">D i G i - SEVA</label>
+      </ul>
+        
+    </div>
+  </div>
+
+
+  <section style="padding-top: 2cm;">
+     <div class="card m-3" style="background-color: rgb(185, 185, 183); border-radius: 0.65cm;" >
+        <div>
+       <h5 class="card-header"  style="background-color: rgb(116, 114, 114); color: lavender;  border-radius: 0.5cm;">Personal Details</h5>
+        </div> 
+       <div class="card-body"  >
+             <form [formGroup]="newAccountForm" (ngSubmit)="addUser()">
+                 <div class="form-row">
+                     <div class="form-group col">
+                        <div *ngIf="newAccountForm.controls.title.errors && 
+                        (newAccountForm.controls.title.touched || newAccountForm.controls.title.dirty)">
+                    <div *ngIf="newAccountForm.get('title').errors.required" style="color: crimson ;">
+                        *Required Field
+                    </div>
+                </div>
+                         <label>Title*</label>
+                    <select formControlName="title" class="form-control" name="title" style="border-radius: 0.5cm;">
+                        <option value=""></option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Ms">Ms</option>
+                    </select>
+
+                </div>
+                <div class="form-group col-3">
+                    
+                    <div *ngIf="newAccountForm.controls.firstName.errors && 
+                    (newAccountForm.controls.firstName.touched || newAccountForm.controls.firstName.dirty)">
+                <div *ngIf="newAccountForm.get('firstName').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div>
+
+                    
+                    <label for="firstName">First Name*</label>
+                    <input type="text" formControlName="firstName" class="form-control" name="firstName" style="border-radius: 0.5cm;" />
+
+                </div>
+
+
+                <div class="form-group col-3">
+
+                    <!-- <div *ngIf="newAccountForm.controls.middleName.errors && 
+                    (newAccountForm.controls.middleName.touched || newAccountForm.controls.middleName.dirty)">
+                <div *ngIf="newAccountForm.get('middleName').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div> -->
+
+                    <label  for="middleName">Middle Name</label>
+                    <input type="text" formControlName="middleName" class="form-control" name="middleName" style="border-radius: 0.5cm;"/>
+
+                </div>
+
+                <div class="form-group col-3">
+
+                    <div *ngIf="newAccountForm.controls.lastName.errors && 
+                    (newAccountForm.controls.lastName.touched || newAccountForm.controls.lastName.dirty)">
+                <div *ngIf="newAccountForm.get('lastName').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div>
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" formControlName="lastName" class="form-control" name="lastName" style="border-radius: 0.5cm;"/>
+
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div *ngIf="newAccountForm.controls.emailId.errors && 
+                (newAccountForm.controls.emailId.touched || newAccountForm.controls.emailId.dirty)">
+            <div *ngIf="newAccountForm.get('emailId').errors.required" style="color: crimson ;">
+                *Required Field
+            </div>
+        </div>
+
+                <label for="emailId">Email*</label>
+                <input type="text" formControlName="emailId" class="form-control" name="emailId" 
+                pattern= "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" style="border-radius: 0.5cm;"/>
+               
+                <div *ngIf="newAccountForm.controls.emailId?.errors" class="error">
+                    <!-- <div class="text-danger" *ngIf="newAccountForm.controls.panNumber.errors.required">Login Password is required</div> -->
+                    <div class="text-danger" *ngIf="newAccountForm.controls.emailId?.errors.pattern">Enter Valid format for email</div>
+            
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+
+                    <div *ngIf="newAccountForm.controls.fatherName.errors && 
+                    (newAccountForm.controls.fatherName.touched || newAccountForm.controls.fatherName.dirty)">
+                <div *ngIf="newAccountForm.get('fatherName').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div>
+                    <label for="fatherName">Father's Name*</label>
+                    <input type="text" formControlName="fatherName" class="form-control" name="fatherName" 
+                      style="border-radius: 0.5cm;" />
+                   
+                     
+             
+
+                </div>
+
+
+                <div class="form-group col">
+
+                    <div *ngIf="newAccountForm.controls.mobileNumber?.errors && 
+                    (newAccountForm.controls.mobileNumber?.touched || newAccountForm.controls.mobileNumber?.dirty)">
+                <div *ngIf="newAccountForm.get('mobileNumber').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div>
+                    <label for="mobileNumber">Mobile Number*</label>
+                    <input type="text" formControlName="mobileNumber" class="form-control" name="mobileNumber" 
+                    pattern="[0-9]{10}" style="border-radius: 0.5cm;"/>
+
+                    <div *ngIf="newAccountForm.controls.mobileNumber?.errors" class="error">
+                        <!-- <div class="text-danger" *ngIf="newAccountForm.controls.panNumber.errors.required">Login Password is required</div> -->
+                        <div class="text-danger" *ngIf="newAccountForm.controls.mobileNumber?.errors.pattern">Enter Valid Mobile Number</div>
+                
+                      </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col">
+
+                    <div *ngIf="newAccountForm.controls.aadharNumber.errors && 
+                    (newAccountForm.controls.aadharNumber.touched || newAccountForm.controls.aadharNumber.dirty)">
+                <div *ngIf="newAccountForm.get('aadharNumber').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div>
+                    <label for="aadharNumber">Aadhar Card*</label>
+                    <input type="text" formControlName="aadharNumber" class="form-control" name="aadharNumber"
+                    pattern="[0-9]{12}" style="border-radius: 0.5cm;"/>
+                    
+                    <div *ngIf="newAccountForm.controls.aadharNumber?.errors" class="error">
+                        <!-- <div class="text-danger" *ngIf="newAccountForm.controls.panNumber.errors.required">Login Password is required</div> -->
+                        <div class="text-danger" *ngIf="newAccountForm.controls.aadharNumber?.errors.pattern">Enter Valid Aadhar Number</div>
+                
+                      </div>
+                </div>
+
+
+<!-- PAN NUMBER -->
+<div class="form-group col">
+
+    <div *ngIf="newAccountForm.controls.panNumber.errors && 
+    (newAccountForm.controls.panNumber.touched || newAccountForm.controls.panNumber.dirty)">
+<div *ngIf="newAccountForm.get('panNumber').errors.required" style="color: crimson ;">
+    *Required Field
+</div>
+</div>
+    <label for="panNumber">PAN Number*</label>
+    <input type="text" formControlName="panNumber" class="form-control" name="panNumber" 
+    pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" style="border-radius: 0.5cm;"/>
+    
+    <div *ngIf="newAccountForm.controls.panNumber?.errors" class="error">
+        <!-- <div class="text-danger" *ngIf="newAccountForm.controls.panNumber.errors.required">Login Password is required</div> -->
+        <div class="text-danger" *ngIf="newAccountForm.controls.panNumber?.errors.pattern">Enter Valid PAN Number</div>
+
+      </div>
+</div>
+
+<!-- END OF PAN NUMBER -->
+
+                <div class="form-group col">
+
+                    <div *ngIf="newAccountForm.controls.dob.errors && 
+                    (newAccountForm.controls.dob.touched || newAccountForm.controls.dob.dirty)">
+                <div *ngIf="newAccountForm.get('dob').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div>
+                    <label for="dob">Date of Birth*</label>
+                    <input type="date" formControlName="dob" class="form-control" name="dob" style="border-radius: 0.5cm;"/>
+
+                </div>
+            </div>
+
+             
+            <h5 class="card-header" style="background-color: rgb(116, 114, 114); color: lavender; border-radius: 0.5cm;">Residential Address</h5>
+             
+            <div class="card-body">
+                <div class="form-group col">
+
+                    <div *ngIf="newAccountForm.controls.residentialAddressLine1.errors && 
+                    (newAccountForm.controls.residentialAddressLine1.touched || newAccountForm.controls.residentialAddressLine1.dirty)">
+                <div *ngIf="newAccountForm.get('residentialAddressLine1').errors.required" style="color: crimson ;">
+                    *Required Field
+                </div>
+            </div>
+                    <label for="residentialAddressLine1">Address Line 1*</label>
+                    <input type="text" formControlName="residentialAddressLine1" class="form-control"
+                        name="residentialAddressLine1" style="border-radius: 0.5cm;"/>
+
+                </div>
+                <div class="form-group col">
+                    <label>Address Line 2</label>
+                    <input type="text" formControlName="residentialAddressLine2" class="form-control"
+                        name="residentialAddressLine2" style="border-radius: 0.5cm;"/>
+
+                </div>
+
+
+
+                <div class="form-row">
+                    <div class="form-group col-3">
+                        <label>Landmark</label>
+                        <input type="text" formControlName="residentialLandmark" class="form-control"
+                            name="residentialLandmark" style="border-radius: 0.5cm;"/>
+
+                    </div>
+
+                    <div class="form-group col-3">
+
+                        
+                        <div *ngIf="newAccountForm.controls.residentialState.errors && 
+                        (newAccountForm.controls.residentialState.touched || newAccountForm.controls.residentialState.dirty)">
+                    <div *ngIf="newAccountForm.get('residentialState').errors.required" style="color: crimson ;">
+                        *Required Field
+                    </div>
+                </div>
+                        <label for="residentialState">State*</label>
+
+                        <input type="text" formControlName="residentialState" class="form-control"
+                            name="residentialState" style="border-radius: 0.5cm;" />
+
+                    </div>
+
+                    <div class="form-group col-3">
+                        <div *ngIf="newAccountForm.controls.residentialCity.errors && 
+                        (newAccountForm.controls.residentialCity.touched || newAccountForm.controls.residentialCity.dirty)">
+                    <div *ngIf="newAccountForm.get('residentialCity').errors.required" style="color: crimson ;">
+                        *Required Field
+                    </div>
+                </div>
+
+                        <label for="residentialCity">City*</label>
+                        <input type="text" formControlName="residentialCity" class="form-control"
+                            name="residentialCity" style="border-radius: 0.5cm;"/>
+
+                    </div>
+                    <div class="form-group col-3">
+
+                        <div *ngIf="newAccountForm.controls.residentialPin.errors && 
+                        (newAccountForm.controls.residentialPin.touched || newAccountForm.controls.residentialPin.dirty)">
+                    <div *ngIf="newAccountForm.get('residentialPin').errors.required" style="color: crimson ;">
+                        *Required Field
+                    </div>
+                </div>
+                        <label for="residentialPin">PIN CODE*</label>
+                        <input type="text" formControlName="residentialPin" class="form-control"
+                            name="residentialPin" style="border-radius: 0.5cm;"/>
+
+                    </div>
+                </div>
+
+            </div>
+        
+ 
+            <h5 class="card-header"  style="background-color: rgb(116, 114, 114); color: lavender;  border-radius: 0.5cm;">Permanent Address</h5>
+          
+          
+         
+
+            <div class="card-body">
+                <div class="form-group col">
+                    <label>Address Line 1*</label>
+                    <input type="text" formControlName="permanentAddressLine1" class="form-control"
+                        name="permanentAddressLine1" style="border-radius: 0.5cm;"    />
+
+                </div>
+                <div class="form-group col">
+                    <label>Address Line 2</label>
+                    <input type="text" formControlName="permanentAddressLine2" class="form-control"
+                        name="permanentAddressLine2" style="border-radius: 0.5cm;"/>
+
+                </div>
+
+
+
+                <div class="form-row">
+                    <div class="form-group col-3">
+                        <label>Landmark</label>
+                        <input type="text" formControlName="permanentLandmark" class="form-control"
+                            name="permanentLandmark" style="border-radius: 0.5cm;"/>
+
+                    </div>
+
+                    <div class="form-group col-3">
+                        <label>State*</label>
+                        <input type="text" formControlName="permanentState" class="form-control"
+                            name="permanentState" style="border-radius: 0.5cm;" />
+
+                    </div>
+
+                    <div class="form-group col-3">
+                        <label>City*</label>
+                        <input type="text" formControlName="permanentCity" class="form-control" name="permanentCity" style="border-radius: 0.5cm;" />
+
+                    </div>
+                    <div class="form-group col-3">
+                        <label>PIN Code*</label>
+                        <input type="text" formControlName="permanentPin" class="form-control" name="permanentPin" style="border-radius: 0.5cm;"/>
+
+                    </div>
+                </div>
+
+            </div>
+          
+  
+
+
+            <h5 class="card-header"  style="background-color: rgb(116, 114, 114); color: lavender; border-radius: 0.5cm;">Occupational Details</h5>
+            <div class="card-body">
+                <div class="form-group col">
+                    <label>Occupation Type</label>
+                    <select formControlName="occupationType" class="form-control" name="occupationType" style="border-radius: 0.5cm;">
+                        <option value=""></option>
+                        <option value="agriculture">Agriculture</option>
+                        <option value="architecture">Architecture and Construction</option>
+                        <option value="business">Business</option>
+                        <option value="training">Education and Training</option>
+                        <option value="finance">Finance</option>
+                        <option value="govt">Government and Public Administration</option>
+                        <option value="health">Health Science</option>
+                        <option value="tourism">Hospitality and Tourism</option>
+                        <option value="IT">Information Technology</option>
+                        <option value="Law">Law, Public Safety, Corrections and Security</option>
+                        <option value="manuacturing">Manufacturing</option>
+                        <option value="marketing">Marketing, Sales and Service</option>
+                        <option value="engineering">Science, Technology, Engineering and Mathematics</option>
+                        <option value="transport">Transportation, Distribution and Logistics</option>
+
+                    </select>
+
+                </div>
+                <div class="form-group col">
+                    <label>Source of Income</label>
+                    <select formControlName="sourceOfIncome" class="form-control" name="sourceOfIncome" style="border-radius: 0.5cm;">
+                        <option value=""></option>
+                        <option value="earned">Earned Income</option>
+                        <option value="profit">Profit Income</option>
+                        <option value="interest">Interest Income</option>
+                        <option value="dividend">Dividend Income</option>
+                        <option value="rental">Rental Income</option>
+                        <option value="capital">Capital Gains</option>
+                        <option value="royalty">Royalty Income</option>
+
+
+                    </select>
+
+                </div>
+
+                <div class="form-group col">
+                    <label>Gross Annual Income</label>
+                    <select formControlName="grossAnnualIncome" class="form-control" name="grossAnnualIncome" style="border-radius: 0.5cm;">
+                        <option value=""></option>
+                        <option value="below1">below 1 lac</option>
+                        <option value="1to4">1 lac - 4 lacs</option>
+                        <option value="4to8t">4 lacs - 8 lacs</option>
+                        <option value="above8">Above 8 lacs</option>
+
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-center">
+                <button class="btn btn-info mr-1 " style="border-radius: 0.5cm;" >Submit</button>
+                <button class="btn btn-dark" type="reset" style="border-radius: 0.5cm;">Reset</button>
+            </div>
+        </form>
+      </div>
+
+     </div>
+</section>

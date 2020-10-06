@@ -1,0 +1,73 @@
+<div style="padding-left: 9cm;">
+<body  style=" background-image: url('assets/images/eBank72.png'); padding-bottom: 15cm; background-repeat: no-repeat; background-size: 800px 750px;">
+ 
+      <section style="padding-left: 7cm; padding-top: 10cm;">
+      <!-- <div class="card" style="width: 32rem; background-color: rgb(185, 185, 183); border-radius: 0.5cm;" >
+         <div class="card-body">
+           
+  
+  
+  
+  
+        </div>
+      </div>  -->
+      <table>
+          <tr>
+              <td><b>Transaction ID</b></td>&nbsp;
+              <td> </td>  
+              <td>{{transactionId}}</td>
+          </tr>
+          <br>
+
+         <tr>
+              <td><b>Mode of Payment</b></td> &nbsp;
+              <td> </td>
+              <td>{{modeOfPayment}}</td>
+          </tr>
+          <br>
+
+          <tr>
+            <td><b>Paid to Account</b></td> &nbsp;
+            <td> </td>
+            <td>{{beneficiaryAccountNumber}}</td>
+        </tr>
+        <br>
+
+        <tr>
+            <td><b>Amount Debited</b></td> &nbsp;
+            <td> </td>
+            <td>{{amount}}</td>
+        </tr>
+        <br>
+
+        <tr>
+            <td><b>Date</b></td> &nbsp;
+            <td> </td>
+            <td>{{now| date:'fullDate'}} </td>
+        </tr>
+        <br>
+
+        
+        <tr>
+            <td><b>Time</b></td> &nbsp;
+            <td> </td>
+            <td>{{now | date:'h:mm:ss a'}}</td>
+        </tr>
+        <br>
+
+        <tr>
+            <td><b>Remarks</b></td> &nbsp;
+            <td> </td>
+            <td>{{remarks}}</td>
+
+        </tr>
+        <br>
+ 
+
+
+      </table>
+
+    </section>
+    </body>
+</div>  
+  

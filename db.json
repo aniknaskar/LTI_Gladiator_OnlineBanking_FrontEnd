@@ -1,0 +1,20 @@
+{
+  "benificiary": [
+    {
+      "benificiaryName": "Abhipsa Bala",
+      "beneficiaryAccountNumber": "680956432154",
+      "beneficiaryConfirmAccountNumber": "680956432154",
+      "benificiaryNickName": "Brishti",
+      "customerAccountNumber": "6800311116",
+      "id": 1
+    },
+    {
+      "benificiaryName": "Anik Kumar Naskar",
+      "beneficiaryAccountNumber": "680956432154",
+      "beneficiaryConfirmAccountNumber": "680956432154",
+      "benificiaryNickName": "Brishti",
+      "customerAccountNumber": "6800543113",
+      "id": 2
+    }
+  ]
+}

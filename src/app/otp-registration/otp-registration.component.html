@@ -1,0 +1,41 @@
+<body  style=" background-image: url('assets/images/eBank41.png'); padding-bottom: 6cm; background-repeat: no-repeat; background-size: 1600px 700px;  ">
+  <section style="padding-left: 8.5cm; padding-top: 5.35cm;">
+    <div class="card" style="width: 20rem; background-color: rgb(185, 185, 183); border-radius: 0.5cm; height: 8cm;" >
+      <h5 class="card-header" style="background-color: rgb(40, 43, 61); color: lavender;  border-top-left-radius: 0.5cm; border-top-right-radius: 0.5cm;">Enter User ID and OTP</h5> 
+      <div class="card-body">
+          <form [formGroup]="otpForm"   (ngSubmit)="onSubmit()">
+             
+                  
+  
+            <div class="form-group">
+              <label for="userId">User ID</label>
+              <input formControlName="userId" placeholder="Enter User ID" name="userId" 
+                    class="form-control" id="userId" pattern="[0-9]{8,10}" style="border-radius: 0.45cm;">
+              <div *ngIf="submitted && otpForm.controls.userId.errors" class="error">
+                  <div class="text-danger" *ngIf="otpForm.controls.userId.errors.required">userId is required</div>
+                  <div class="text-danger" *ngIf="otpForm.controls.userId.errors.pattern">must contain 8 numbers between 0 to 10</div>
+                </div>
+            </div>
+
+               <div class="form-group">
+                  <label for="otp">OTP</label>
+                  <input formControlName="otp" placeholder="Enter OTP" name="otp" 
+                        class="form-control" id="otp" pattern="[0-9]{4}" style="border-radius: 0.45cm;">
+                  <div *ngIf="submitted && otpForm.controls.otp.errors" class="error">
+                      <div class="text-danger" *ngIf="otpForm.controls.otp.errors.required">otp is required</div>
+                      <div class="text-danger" *ngIf="otpForm.controls.otp.errors.pattern">must contain 4 numbers between 0 to 10</div>
+                    </div>
+                </div>
+
+                <button class="btn btn-info mr-1" type="submit" style="border-radius: 0.5cm;">Submit</button>
+               
+                <div *ngIf="invalidVerify" class="error">
+                  <div class="text-danger">User ID or OTP is incorrect</div>
+                </div>
+
+  
+</form>
+      </div>  
+      </div>
+      </section>
+</body>

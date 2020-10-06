@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DiGiSEVA"
+    }
+  },
+  "defaultProject": "DiGiSEVA",
+  "cli": {
+    "analytics": "dff895c4-7350-4e5c-85a5-43d887387b09"
+  }
 }

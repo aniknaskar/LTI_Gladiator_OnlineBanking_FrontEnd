@@ -1,0 +1,152 @@
+<div class="col-xl-12 col-lg-8 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+  <div>
+    <!-- <div class="btn-group btn-group-justified col-xl">
+       
+        <button class="btn btn-danger btn-xl" (click)="home()">Home</button>
+        <button   class="btn btn-info btn-xl1" (click)="newAccount()" >New Account</button>
+         <button   class="btn btn-danger btn-xl" (click)="registerInternetBanking()" >Register Internet Banking</button>
+        <button   class="btn btn-info btn-xl1" (click)="loginCustomer()">Customer Login</button>
+        <button   class="btn btn-danger btn-xl" (click)="loginAdmin()">Admin Login</button> 
+      
+
+      
+    </div> -->
+    <ul>
+      <li><a href="home-page">Home</a></li>
+      <li><a href="account-open">New Account</a></li>
+      <li><a href="register-internet">Register</a></li>
+      <li><a href="customer-login">Login</a></li>
+      <li><a href="admin-login"  >Admin Login</a></li>
+      <label style="float: right; color: aliceblue; padding-top: 0.25cm; font-size: x-large; font-weight: bolder;">D i G i - SEVA</label>
+    </ul>
+      
+  </div>
+</div>
+
+
+  <section style="padding-top: 3cm;">
+    <div class="card m-3" style="background-color: rgb(185, 185, 183); border-radius: 0.65cm;" >
+    <h5 class="card-header"  style="background-color: rgb(116, 114, 114); color: lavender;  border-radius: 0.5cm;">Registration</h5>
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+           
+                
+
+             <div class="form-group">
+                <label for="accountNumber">Account Number</label>
+                <input formControlName="accountNumber" placeholder="accountNumber" name="accountNumber" 
+                      class="form-control" id="accountNumber" pattern="[0-9]{8,10}" style="border-radius: 0.5cm;">
+                <div *ngIf="submitted && registerForm.controls.accountNumber.errors" class="error">
+                    <div class="text-danger" *ngIf="registerForm.controls.accountNumber.errors.required">Account Number is required</div>
+                    <div class="text-danger" *ngIf="registerForm.controls.accountNumber.errors.pattern">must contain 10 numbers between 0 to 10</div>
+                  </div>
+              </div>
+
+
+                
+
+
+
+                <div class="form-row">
+               
+                
+                <div class="form-group col-6">
+                    <label for="loginPassword">Login Password</label>
+                    <input formControlName="loginPassword" placeholder="Login Password" name="loginPassword" 
+                        class="form-control" id="loginPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="border-radius: 0.5cm;" type="password">
+                    <div *ngIf="submitted && registerForm.controls.loginPassword.errors" class="error">
+                        <div class="text-danger" *ngIf="registerForm.controls.loginPassword.errors.required">Login Password is required</div>
+                        <div class="text-danger" *ngIf="registerForm.controls.loginPassword.errors.pattern"> Must contain at least
+                               one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
+
+                      </div>
+                  </div>
+
+                  <div class="form-group col-6">
+                    <label for="confirmLoginPassword">Confirm Login Password</label>
+                    <input formControlName="confirmLoginPassword" placeholder="Login Password" name="confirmLoginPassword" 
+                        class="form-control" id="confirmLoginPassword" style="border-radius: 0.5cm;" type="password">
+                    <div *ngIf="submitted && registerForm.controls.confirmLoginPassword.errors" class="error">
+                        <div class="text-danger" *ngIf="registerForm.controls.confirmLoginPassword.errors.required">Login Password is required</div>
+                        <div class="text-danger" *ngIf="registerForm.controls.confirmLoginPassword.errors.mustMatch">Passwords must match</div>
+                      </div>
+                  </div>
+
+
+                
+                 </div><br>
+
+                 <div class="form-row">
+               
+                    
+                    <div class="form-group col-6">
+                        <label for="transactionPassword">Transaction Password</label>
+                        <input formControlName="transactionPassword" placeholder="Transaction Password" name="transactionPassword" 
+                        class="form-control" id="transactionPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="border-radius: 0.5cm;" type="password">
+                        <div *ngIf="submitted && registerForm.controls.transactionPassword.errors" class="error">
+                            <div class="text-danger" *ngIf="registerForm.controls.transactionPassword.errors.required">Transaction Password is required</div>
+                            <div class="text-danger" *ngIf="registerForm.controls.loginPassword.errors.pattern"> Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
+ 
+                        </div>
+                      </div>
+                    
+    
+                    
+                    <div class="form-group col-6">
+                        <label for="confirmTransactionPassword">Confirm Transaction Password</label>
+                        <input formControlName="confirmTransactionPassword" placeholder="Transaction Password" name="confirmTransactionPassword" class="form-control" id="confirmTransactionPassword" 
+                        style="border-radius: 0.5cm;" type="password">
+                        <div *ngIf="submitted && registerForm.controls.confirmTransactionPassword.errors" class="error">
+                            <div class="text-danger" *ngIf="registerForm.controls.confirmTransactionPassword.errors.required">Transaction Password is required</div>
+                            <div class="text-danger" *ngIf="registerForm.controls.confirmTransactionPassword.errors.mustMatch">Passwords must match</div>
+
+                          </div>
+                      </div>
+    
+                     </div><br>
+
+
+
+                     <!-- <div class="form-group">
+                        <input type="password" [(ngModel)]="userdata.password" name="password" placeholder="Password" class="form-control" required #password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                        <div *ngIf="password.invalid && (myform.submitted || password.touched)" class="alert alert-danger">
+                          <div *ngIf="password.errors.required"> Password is required. </div>
+                          <div *ngIf="password.errors.pattern"> Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
+                        </div>
+                       </div>
+                       
+                       <div class="form-group">
+                        <input type="password" [(ngModel)]="confirmpassword" name="confirmpassword" placeholder="Confirm Password" class="form-control" required #confirmpassword="ngModel" pattern="{{ password.value }}" />
+                        <div *ngIf=" confirmpassword.invalid && (myform.submitted || confirmpassword.touched)" class="alert alert-danger">
+                          <div *ngIf="confirmpassword.errors.required"> Confirm password is required. </div>
+                          <div *ngIf="confirmpassword.errors.pattern"> Password & Confirm Password does not match.</div>
+                        </div>
+                       </div> -->
+
+
+
+                     <!-- <div class="form-row">
+               
+                        <div class="form-group col-6">
+                            <label>Enter OTP</label>
+                            <input type="password" formControlName="otp" class="form-control"  style="border-radius: 0.5cm;" />
+                          
+                        </div>
+        
+                      
+        
+                    </div> -->
+  
+  
+            <!-- <div class="text-center"> -->
+                <button class="btn btn-info mr-1" type="submit" style="border-radius: 0.5cm;">Register</button>
+                <!-- <button class="btn btn-secondary" type="reset" >Cancel</button> -->
+            <!-- </div> -->
+            <div *ngIf="invalidRegister" class="error">
+              <div class="text-danger">Invalid Account Number</div>
+            </div>
+
+        </form>
+    </div>
+  </div> 
+</section>
