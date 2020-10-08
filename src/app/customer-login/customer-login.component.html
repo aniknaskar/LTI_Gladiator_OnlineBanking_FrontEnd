@@ -157,6 +157,9 @@
             <!-- </div> -->
         </form><br>
 
+        <div *ngIf="invalidLogin">
+            <p style="color: red;">Invalid Credentials</p>
+        </div>
         <!-- <div style="padding-left: 3cm;">
         <button class="btn btn-info mr-2" (click)="registerInternetBanking()">Register</button>
         <button class="btn btn-dark mr-2" (click)="forgotID()">Forgot ID</button>

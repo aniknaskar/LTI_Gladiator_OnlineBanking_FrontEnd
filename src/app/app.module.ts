@@ -32,6 +32,7 @@ import { ViewBeneficiaryComponent } from './view-beneficiary/view-beneficiary.co
 import { TransactionSuccessfulComponent } from './transaction-successful/transaction-successful.component';
 import { TransactionPasswordComponent } from './transaction-password/transaction-password.component';
 import { SavedPaymentsComponent } from './saved-payments/saved-payments.component';
+import { SessionExpiredComponent } from './session-expired/session-expired.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SavedPaymentsComponent } from './saved-payments/saved-payments.componen
     ViewBeneficiaryComponent,
     TransactionSuccessfulComponent,
     TransactionPasswordComponent,
-    SavedPaymentsComponent
+    SavedPaymentsComponent,
+    SessionExpiredComponent
   ],
   imports: [
     BrowserModule,

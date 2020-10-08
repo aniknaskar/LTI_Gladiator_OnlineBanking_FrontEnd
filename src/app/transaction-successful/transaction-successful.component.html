@@ -43,7 +43,7 @@
         <tr>
             <td><b>Date</b></td> &nbsp;
             <td> </td>
-            <td>{{now| date:'fullDate'}} </td>
+            <td>{{now | date: 'mediumDate'}} </td>
         </tr>
         <br>
 
@@ -51,23 +51,26 @@
         <tr>
             <td><b>Time</b></td> &nbsp;
             <td> </td>
-            <td>{{now | date:'h:mm:ss a'}}</td>
+            <td>{{now | date:'h:mm a'}}</td>
         </tr>
         <br>
 
-        <tr>
+        <!-- <tr>
             <td><b>Remarks</b></td> &nbsp;
             <td> </td>
             <td>{{remarks}}</td>
 
-        </tr>
+        </tr> -->
         <br>
  
 
 
       </table>
-
+      <br><br><br><br>
+      <button class="btn btn-info" (click)="createPdf()">Download Receipt</button>
     </section>
+
+    
     </body>
 </div>  
   

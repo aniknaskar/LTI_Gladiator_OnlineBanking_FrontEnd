@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Beneficiary } from '../benificiary';
 import { UserService } from '../user.service';
 
 @Component({
@@ -12,17 +13,22 @@ export class SavedPaymentsComponent implements OnInit {
 
   saveTransferForm:FormGroup;
   customerName:string;
- 
+  beneficiaries:Beneficiary[];
   constructor(private fb:FormBuilder,private router: Router,private service:UserService) { }
 
   ngOnInit(): void {
 
+    this.service.viewBeneficiary().subscribe(data=>
+      {
+        this.beneficiaries=data;
+      });
+
     this.customerName=localStorage.getItem("customerName");
          this.saveTransferForm=  this.fb.group({
-          customerAccountNumber:['',Validators.required],
+          customerAccountNumber:[],
           beneficiaryAccountNumber:['',Validators.required],
        amount:['',Validators.required],
-       remark:['',Validators.required],
+        remark:[],
        dateOfPayment:['',Validators.required]
        
      });
@@ -30,25 +36,43 @@ export class SavedPaymentsComponent implements OnInit {
     saveTransferThroughNEFT(){
       // this.router.navigate(['transaction-password'])
       // alert("Payment Successful");
-      alert("payment saved")
 
+      if(this.saveTransferForm.invalid){
+        alert("Fill the required fields")
+        return;
+      }
+      
+      else{
+      alert("payment saved")
+      
       localStorage.setItem("modeOfTransaction","NEFT");
       this.service.savePayments(this.saveTransferForm.value).subscribe(data=>
         {
-          alert("Payment is saved");
-          this.router.navigate(['customer-dashboard'])
+           alert("Payment is saved");
+           this.router.navigate(['customer-dashboard'])
 
           
 
         });
 
-        
+      } 
 
     }
+
+    // ok1(){
+    //   this.router.navigate(['customer-dashboard'])
+    // }
 
     saveTransferThroughIMPS(){
       // this.router.navigate(['transaction-password'])
       // alert("Payment Successful")
+
+      if(this.saveTransferForm.invalid){
+        alert("Fill the required fields")
+        return;
+      }
+
+      else{
       alert("payment saved")
 
       localStorage.setItem("modeOfTransaction","IMPS");
@@ -59,12 +83,19 @@ export class SavedPaymentsComponent implements OnInit {
 
         });
 
-        
+      }  
     }
 
     saveTransferThroughRTGS(){
       // this.router.navigate(['transaction-password'])
       // alert("Payment Successful")
+
+      if(this.saveTransferForm.invalid){
+        alert("Fill the required fields")
+        return;
+      }
+
+      else{
       alert("payment saved")
 
       localStorage.setItem("modeOfTransaction","RTGS");
@@ -76,7 +107,7 @@ export class SavedPaymentsComponent implements OnInit {
 
         });
 
-        
+      }  
     }
 
     addBenificiary(){

@@ -17,8 +17,8 @@ export class AfterLoginComponent implements OnInit {
   constructor(private router: Router,private service:UserService) { }
 
   ngOnInit(): void {
-
-
+    
+    if(localStorage.getItem("username")!=null){
     this.router.navigate(['customer-dashboard']);
     this.accountNumber=localStorage.getItem("accountNumber");
     this.customerName=localStorage.getItem("customerName");
@@ -28,7 +28,10 @@ export class AfterLoginComponent implements OnInit {
       {
         this.accountBalance=data;
       })
-    
+    }
+
+    else
+       this.router.navigate(['session-expired']);
   
   }
 

@@ -388,7 +388,7 @@
                         <option value=""></option>
                         <option value="below1">below 1 lac</option>
                         <option value="1to4">1 lac - 4 lacs</option>
-                        <option value="4to8t">4 lacs - 8 lacs</option>
+                        <option value="4to8">4 lacs - 8 lacs</option>
                         <option value="above8">Above 8 lacs</option>
 
 
@@ -400,10 +400,27 @@
 
 
             <div class="text-center">
-                <button class="btn btn-info mr-1 " style="border-radius: 0.5cm;" >Submit</button>
+                <button class="btn btn-info mr-1 " style="border-radius: 0.5cm;" data-toggle="modal" data-target="#sign-out" >Submit</button>
                 <button class="btn btn-dark" type="reset" style="border-radius: 0.5cm;">Reset</button>
             </div>
         </form>
+
+        <div *ngIf="!(this.newAccountForm.invalid)" class="modal fade" id="sign-out">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Account Request Submitted</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+   
+                <div class="modal-footer" >
+                  <button type="button" class="btn btn-success" data-dismiss="modal" (click)="ok()">OK</button>
+                  <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="logout()">Logout</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
       </div>
 
      </div>

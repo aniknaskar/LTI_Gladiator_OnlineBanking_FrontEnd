@@ -5,16 +5,11 @@ export class Login {
     public customerName:string;
     public accountBalance:string
     public transactionPassword:string;
+    public numberOfAttemptedLogin:number;
+    public isLocked:number;
 
-    constructor(internetBankingId : string,customerLoginPassword : string,accountNumber:string,customerName:string,accountBalance:string,transactionPassword:string)
-    {
-        this.internetBankingId=internetBankingId;
-        this.loginPassword=customerLoginPassword;
-        this.customerName=customerName;
-        this.accountNumber=accountNumber;
-        this.accountBalance=accountBalance;
-        this.transactionPassword=transactionPassword;
-    }
+    
+    
 
    
     

@@ -47,7 +47,7 @@ export class NewAccountRequestsComponent implements OnInit {
     this.adminobj.residentialPin = this.userData[index].residentialPin;
     this.adminobj.occupationType= this.userData[index].occupationType;
     this.adminobj.sourceOfIncome = this.userData[index].sourceOfIncome;
-    this.adminobj.grossAnnualIncome = this.userData[index].firstName;
+    this.adminobj.grossAnnualIncome = this.userData[index].grossAnnualIncome;
     this.adminobj.emailId = this.userData[index].emailId;
     this.adminobj.mobileNumber = this.userData[index].mobileNumber;
     this.adminobj.aadharNumber = this.userData[index].aadharNumber;

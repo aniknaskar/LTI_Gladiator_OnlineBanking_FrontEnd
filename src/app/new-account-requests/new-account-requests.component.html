@@ -15,8 +15,9 @@
          
         <div class="dropdown-content">
             <a href="account-requests">Account Opening Request</a>
-            <a href="unverified-users">Unverified Users</a>
+           
             <a href="verified-users">Verified Users</a>
+            <a href="unverified-users">Rejected Users</a>
            
         </div>
     
@@ -92,6 +93,7 @@
                 <td> serviceRefNumber </td>
 
                 <td> verifyStatus </td>
+                <td>Submit</td>
 
 
 
@@ -124,7 +126,9 @@
                 <td><span>{{user.grossAnnualIncome | titlecase }}</span></td>
                 <td><span>{{user.emailId | titlecase }}</span></td>
                 <td><span>{{user.mobileNumber | titlecase }}</span></td>
+
                 <td><span>{{user.aadharNumber | titlecase }}</span></td>
+                <td><span>{{user.panNumber | titlecase }}</span></td>
                 <td><span>{{user.serviceRefNumber | titlecase }}</span></td>
                 <td><span>
                     <select id=i name="approvedByAdmin" [(ngModel)]="user.verifyStatus" 

@@ -8,7 +8,10 @@ import {Beneficiary} from './benificiary';
 import {ChangeLoginPassword} from './changeloginpassword';
 import {ChangeTransactionPassword} from './changetransactionpassword'
 import{Transaction} from './transaction';
+import{TransactionResponse} from './transactionresponse';
+import{OTP} from './otp';
 import { from } from 'rxjs';
+import { GetTransaction } from './gettransaction';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +31,7 @@ export class UserService {
   }
 
   createInternetBankingUser(user: internetBanking) {
-    return this.http.post<string>("http://localhost:9091/Digiseva/customerlogin/createlogin", user);
+    return this.http.post<OTP>("http://localhost:9091/Digiseva/customerlogin/createlogin", user);
   }
 
 
@@ -95,7 +98,7 @@ export class UserService {
     transaction.dateOfPayment = localStorage.getItem("dateOfPayment");
     transaction.modeOfTransaction = localStorage.getItem("modeOfTransaction");
     transaction.customerAccountNumber=localStorage.getItem("accountNumber"); 
-    return this.http.post<number>("http://localhost:9091/Digiseva/transaction/checktransaction",transaction);
+    return this.http.post<TransactionResponse>("http://localhost:9091/Digiseva/transaction/checktransaction",transaction);
   }
 
   savePayments(transaction:Transaction)
@@ -108,5 +111,55 @@ export class UserService {
   {
     let accountNumber=localStorage.getItem("accountNumber");
     return this.http.post<number>("http://localhost:9091/Digiseva/accountinfo/getaccountbalance",accountNumber);
+  }
+
+
+  getStatements(){
+    let accountNumber:string=localStorage.getItem("accountNumber");
+    return this.http.post<Transaction[]>("http://localhost:9091/Digiseva/transaction/getalltransactions",accountNumber);
+  }
+
+
+  //for fetching users, who are approved by admin
+  getVerifiedUsers(){
+    return this.http.get<userInfo[]>("http://localhost:9091/Digiseva/user/getallverifieduser");
+  }
+
+  getUnVerifiedUsers(){
+    return this.http.get<userInfo[]>("http://localhost:9091/Digiseva/user/getallrejecteduser");
+  }
+  viewBeneficiary()
+  {
+    let accountNumber:string=localStorage.getItem("accountNumber");
+    return this.http.post<Beneficiary[]>("http://localhost:9091/Digiseva/transaction/getallbeneficiaries",accountNumber);
+  }
+
+  viewSavedPayment()
+  {
+    let accountNumber:string=localStorage.getItem("accountNumber");
+    return this.http.post<Transaction[]>("http://localhost:9091/Digiseva/transaction/getallsavedpayments",accountNumber);
+  }
+
+  lockAccount()
+  {
+    let internetBankingId:string=localStorage.getItem("internetBankingId")
+    return this.http.post("http://localhost:9091/Digiseva/customerlogin/lockaccount",internetBankingId);
+  }
+
+  updateNumberOfAttemptedLogin()
+  {
+    alert(localStorage.getItem("internetBankingId"))
+   
+    return this.http.post("http://localhost:9091/Digiseva/customerlogin/addnumberoflogin",localStorage.getItem("internetBankingId"));
+  }
+
+  deleteSavedPayment(trans:Transaction)
+  {
+    return this.http.post("http://localhost:9091/Digiseva/transaction/deletesavedpayment",trans);
+  }
+
+  getStatementsByDate(getTransaction:GetTransaction)
+  {
+    return this.http.post<Transaction[]>("http://localhost:9091/Digiseva/transaction/getalltransactionswithdate",getTransaction);
   }
 }

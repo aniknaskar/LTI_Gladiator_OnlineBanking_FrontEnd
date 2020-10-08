@@ -30,7 +30,7 @@ export class AdminLoginComponent implements OnInit {
  
   onSubmit(){
    
-    alert(this.adminLoginForm.controls.adminId.value);
+    
     let id:string=this.adminLoginForm.controls.adminId.value;
     this.service.getAdminById(id).subscribe(data => 
       {

@@ -1,308 +1,335 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light">
-        <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <div class="container-fluid">
-            <div class="row">
-              <!-- sidebar -->
-              <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
-                <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">Hello</a>
-                <div class="bottom-border pb-3">
-                  <img src="assets/images/user.png" width="50" class="rounded-circle mr-3">
-                  <a href="#" class="text-white">{{customerName}}</a>
-                </div>
-                <ul class="navbar-nav flex-column mt-4">
-                  <li class="nav-item"><a href="customer-dashboard" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
-                  
-                  <!-- <li class="nav-item"><a href="show-profile" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user text-light fa-lg mr-3"></i>Profile</a></li> -->
-                  
-                  <li class="nav-item"><a href="customer-accountStatement" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-list-alt text-light fa-lg mr-3"></i>AccountStatement</a></li>
-                  <li class="nav-item"><a href="customer-accountSummary" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-university text-light fa-lg mr-3"></i>AccountSummary</a></li>
-                  <li class="nav-item"><a href="customer-fundTransfer" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-rupee-sign text-light fa-lg mr-3"></i>Fund Transfer</a></li>
-                  <li class="nav-item"><a href="change-password" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-key fa-lg mr-3" aria-hidden="true"></i>Change Password</a></li>
-                  <li class="nav-item"><a href="add-benificiary" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user-friends fa-lg mr-3"></i>Add Benificiary</a></li>
-                  <li class="nav-item"><a href="view-beneficiary" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-address-book fa-lg mr-3" aria-hidden="true"></i> View Benificiary</a></li>
-                  <li class="nav-item"><a href="save-payment" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-save fa-lg mr-3" aria-hidden="true"></i>Save Payment</a></li>
+      <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- sidebar -->
+            <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+              <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">Hello</a>
+              <div class="bottom-border pb-3">
+                <img src="assets/images/user.png" width="50" class="rounded-circle mr-3">
+                <a href="#" class="text-white">{{customerName}}</a>
+              </div>
+              <ul class="navbar-nav flex-column mt-4">
+                <li class="nav-item"><a href="customer-dashboard" class="nav-link text-white p-3 mb-2  "><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
+                
+                <!-- <li class="nav-item"><a href="show-profile" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user text-light fa-lg mr-3"></i>Profile</a></li> -->
+                
+                <li class="nav-item"><a href="customer-accountStatement" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-list-alt text-light fa-lg mr-3"></i>AccountStatement</a></li>
+                <li class="nav-item"><a href="customer-accountSummary" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-university text-light fa-lg mr-3"></i>AccountSummary</a></li>
+                <li class="nav-item"><a href="customer-fundTransfer" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-rupee-sign text-light fa-lg mr-3"></i>Fund Transfer</a></li>
+                <li class="nav-item"><a href="change-password" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-key fa-lg mr-3" aria-hidden="true"></i>Change Password</a></li>
+                <li class="nav-item"><a href="add-benificiary" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user-friends fa-lg mr-3"></i>Add Benificiary</a></li>
+                <li class="nav-item"><a href="view-beneficiary" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-address-book fa-lg mr-3" aria-hidden="true"></i> View Benificiary</a></li>
+                <li class="nav-item"><a href="save-payment" class="nav-link text-white p-3 mb-2 sidebar-link current"><i class="fas fa-save fa-lg mr-3" aria-hidden="true"></i>Save Payment</a></li>
 
-                </ul>
-              </div>
-              <!-- end of sidebar -->
-    
-              <!-- top-nav -->
-              <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
-                <div class="row align-items-center">
-                  <div class="col-md-4">
-                    <h4 class="text-light text-uppercase mb-0"></h4>
-                  </div>
-                  <div class="col-md-5">
-    
-                  </div>
-                  <div class="col-md-3">
-                    <ul class="navbar-nav">
-    
-                      <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
-                    </ul>
-                  </div>
+              </ul>
+            </div>
+            <!-- end of sidebar -->
+  
+            <!-- top-nav -->
+            <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <h4 class="text-light text-uppercase mb-0"></h4>
+                </div>
+                <div class="col-md-5">
+  
+                </div>
+                <div class="col-md-3">
+                  <ul class="navbar-nav">
+  
+                    <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
+                  </ul>
                 </div>
               </div>
-              <!-- end of top-nav -->
             </div>
-          </div>
-        </div>
- </nav>
-      <!-- end of navbar -->
-     
-      <div class="modal fade" id="sign-out">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Want to leave?</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              Press logout to leave
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="logout()">Logout</button>
-            </div>
+            <!-- end of top-nav -->
           </div>
         </div>
       </div>
+</nav>
+    <!-- end of navbar -->
+   
+    <div class="modal fade" id="sign-out">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Want to leave?</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            Press logout to leave
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
- 
+
 
 
 
 
 <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
-    <div class="row align-items-center">
-      <div class="col-md-5">
-        <h4 class="text-light text-uppercase ">Save Payments -(NEFT/IMPS/RTGS)</h4>
-      </div>
-      <div class="col-md-4">
-  
-      </div>
-      <div class="col-md-3">
-        <ul class="navbar-nav">
-  
-          <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
-        </ul>
-      </div>
+  <div class="row align-items-center">
+    <div class="col-md-5">
+      <h4 class="text-light text-uppercase ">Save Payments -(NEFT/IMPS/RTGS)</h4>
     </div>
- </div>
-  
-  
-  
-  <section class="page1">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-10 col-lg-8 col-md-8 ml-auto">
-          <div class="row align-items-center mb-5">
-            <div class="col-xl-12">
-             <br>
-               <div id="accordion">
-                <div class='alert alert-info'>
-                  <h3  >Save NEFT Payment</h3>
-                 </div> 
-  <div class="card m-3"  >
-     
-    <div class="card-body">
-        <form [formGroup]="saveTransferForm" (ngSubmit)="saveTransferThroughNEFT()">
-            <div class="form-row">
-            
-                <!-- <div class="form-group col-6">
-                    <label>From Account</label>
-                    <input type="text" formControlName="customerAccountNumber" name="customerAccountNumber" class="form-control"/>
-                 
-                </div> -->
-                <div class="form-group col">
-                    <label>To Account</label>
-                    <input type="text" formControlName="beneficiaryAccountNumber" name="beneficiaryAccountNumber" class="form-control"   /><br>
-                    <button class="btn btn-primary" (click)="addBenificiary()" >Add Benificiary</button>
-                </div>
-               
-            </div>
-            
-            <!-- <div class="form-group">
-              <label>Maturity Instruction</label>
-              <input type="text" formControlName="maturity" class="form-control"   />
-            
-          </div> -->
-            <div class="form-group">
-                <label>Remark</label>
-                <input type="text" formControlName="remark" class="form-control"   />
-              
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label>Amount</label>
-                    <input type="text" formControlName="amount" class="form-control"   />
-               
-                </div>
-                <div class="form-group col">
-                    <label>Transaction Date</label>
-                    <input type="date" formControlName="dateOfPayment" class="form-control"   />
-                 
-                </div>
-            </div>
-           
-            <div class="text-center">
-                <!-- <button class="btn btn-primary mr-1">Continue</button> -->
-                <button class="btn btn-secondary" type="save" >Save</button>
-            </div>
-        </form>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-3">
+      <ul class="navbar-nav">
+
+        <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
+      </ul>
     </div>
   </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </section>
-  
-  
-  
-  <section>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-10 col-lg-8 col-md-8 ml-auto">
-          <div class="row align-items-center mb-5">
-            <div class="col-xl-12">
-             <br>
-               <div id="accordion">
-                <div class='alert alert-info'>
-                  <h3  >Save IMPS Payment</h3>
-                 </div> 
-  <div class="card m-3"  >
-     
-    <div class="card-body">
-        <form [formGroup]="saveTransferForm" (ngSubmit)="saveTransferThroughIMPS()">
-            <div class="form-row">
-              
-                <!-- <div class="form-group col-6">
-                    <label>From Account</label>
-                    <input type="text" formControlName="customerAccountNumber" name="customerAccountNumber" class="form-control"/>
-                 
-                </div> -->
-                <div class="form-group col">
-                    <label>To Account</label>
-                    <input type="text" formControlName="beneficiaryAccountNumber" name="beneficiaryAccountNumber" class="form-control"   /><br>
-                    <button class="btn btn-primary" (click)="addBenificiary()" >Add Benificiary</button>
-                </div>
-               
-            </div>
-            
-            <!-- <div class="form-group">
-              <label>Maturity Instruction</label>
-              <input type="text" formControlName="maturity" class="form-control"   />
-            
-          </div> -->
-            <div class="form-group">
-                <label>Remark</label>
-                <input type="text" formControlName="remark" class="form-control"   />
-              
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label>Amount</label>
-                    <input type="text" formControlName="amount" class="form-control"   />
-               
-                </div>
-                <div class="form-group col">
-                    <label>Transaction Date</label>
-                    <input type="date" formControlName="dateOfPayment" class="form-control"   />
-                 
-                </div>
-            </div>
-           
-            <div class="text-center">
-                <!-- <button class="btn btn-primary mr-1">Continue</button> -->
-                <button class="btn btn-secondary" type="save" >Save</button>
-            </div>
-        </form>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </section>
-  
-  <section>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-10 col-lg-8 col-md-8 ml-auto">
-          <div class="row align-items-center mb-5">
-            <div class="col-xl-12">
-             <br>
-               <div id="accordion">
-                <div class='alert alert-info'>
-                  <h3  >Save RTGS Payment</h3>
-                 </div> 
-  <div class="card m-3"  >
-     
-    <div class="card-body">
-        <form [formGroup]="saveTransferForm" (ngSubmit)="saveTransferThroughRTGS()">
-            <div class="form-row">
+</div>
+
+
+
+<section class="page1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-10 col-lg-8 col-md-8 ml-auto">
+        <div class="row align-items-center mb-5">
+          <div class="col-xl-12">
+           <br>
+             <div id="accordion">
+              <div class='alert alert-info'>
+                <h3  >Save NEFT Payment</h3>
+               </div> 
+<div class="card m-3"  >
+   
+  <div class="card-body">
+      <form [formGroup]="saveTransferForm" (ngSubmit)="saveTransferThroughNEFT()">
+          <div class="form-row">
           
-                <!-- <div class="form-group col-6">
-                    <label>From Account</label>
-                    <input type="text" formControlName="customerAccountNumber" name="customerAccountNumber" class="form-control"/>
-                 
-                </div> -->
-                <div class="form-group col">
-                    <label>To Account</label>
-                    <input type="text" formControlName="beneficiaryAccountNumber" name="beneficiaryAccountNumber" class="form-control"   /><br>
-                    <button class="btn btn-primary" (click)="addBenificiary()" >Add Benificiary</button>
-                </div>
+              <!-- <div class="form-group col-6">
+                  <label>From Account</label>
+                  <input type="text" formControlName="customerAccountNumber" name="customerAccountNumber" class="form-control"/>
                
-            </div>
+              </div> -->
+              <div class="form-group col">
+                  <label>To Account*</label>
+                  <select formControlName="beneficiaryAccountNumber" name="beneficiaryAccountNumber" class="form-control">
+                    <option [value]="bene.beneficiaryAccountNumber" *ngFor="let bene of beneficiaries">{{bene.beneficiaryName}} ({{bene.beneficiaryAccountNumber}})</option>
+                  </select><br>           
+                         <button class="btn btn-primary" (click)="addBenificiary()" >Add Benificiary</button>
+              </div>
+             
+          </div>
+          
+          <!-- <div class="form-group">
+            <label>Maturity Instruction</label>
+            <input type="text" formControlName="maturity" class="form-control"   />
+          
+        </div> -->
+          <div class="form-group">
+              <label>Remark</label>
+              <input type="text" formControlName="remark" class="form-control"   />
             
-            <!-- <div class="form-group">
-              <label>Maturity Instruction</label>
-              <input type="text" formControlName="maturity" class="form-control"   />
-            
-          </div> -->
-            <div class="form-group">
-                <label>Remark</label>
-                <input type="text" formControlName="remark" class="form-control"   />
-              
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label>Amount</label>
-                    <input type="text" formControlName="amount" class="form-control"   />
+          </div>
+          <div class="form-row">
+              <div class="form-group col">
+                  <label>Amount*</label>
+                  <input type="text" formControlName="amount" class="form-control"   />
+             
+              </div>
+              <div class="form-group col">
+                  <label>Transaction Date*</label>
+                  <input type="date" formControlName="dateOfPayment" class="form-control"   />
                
-                </div>
-                <div class="form-group col">
-                    <label>Transaction Date</label>
-                    <input type="date" formControlName="dateOfPayment" class="form-control"   />
-                 
-                </div>
-            </div>
-           
-            <div class="text-center">
+              </div>
+          </div>
+         
+          <div class="text-center">
+              <!-- <button class="btn btn-primary mr-1">Continue</button> -->
+              <button class="btn btn-secondary" type="save"  >Save</button>
+          </div>
+      </form>
 
-                <!-- <button   class="btn btn-primary mr-1">Continue</button> -->
-                <button  class="btn btn-secondary"  >Save</button>  
+      <!-- <div *ngIf="!(this.saveTransferForm.invalid)" class="modal fade" id="sign-out">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Payment saved successfully</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-        </form>
-                        <!-- <button  class="btn btn-secondary" (click)="save()" >Save</button>    -->
 
-    </div>
+            <div class="modal-footer" >
+              <button type="button" class="btn btn-success" data-dismiss="modal" (click)="ok1()">OK</button>
+ <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="logout()">Logout</button>  
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+
+
+
   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-10 col-lg-8 col-md-8 ml-auto">
+        <div class="row align-items-center mb-5">
+          <div class="col-xl-12">
+           <br>
+             <div id="accordion">
+              <div class='alert alert-info'>
+                <h3  >Save IMPS Payment</h3>
+               </div> 
+<div class="card m-3"  >
+   
+  <div class="card-body">
+      <form [formGroup]="saveTransferForm" (ngSubmit)="saveTransferThroughIMPS()">
+          <div class="form-row">
+            
+              <!-- <div class="form-group col-6">
+                  <label>From Account</label>
+                  <input type="text" formControlName="customerAccountNumber" name="customerAccountNumber" class="form-control"/>
+               
+              </div> -->
+              <div class="form-group col">
+                  <label>To Account*</label>
+                  <select formControlName="beneficiaryAccountNumber" name="beneficiaryAccountNumber" class="form-control">
+                    <option [value]="bene.beneficiaryAccountNumber" *ngFor="let bene of beneficiaries">{{bene.beneficiaryName}} ({{bene.beneficiaryAccountNumber}})</option>
+                  </select><br>         
+                 <button class="btn btn-primary" (click)="addBenificiary()" >Add Benificiary</button>
+              </div>
+             
+          </div>
+          
+          <!-- <div class="form-group">
+            <label>Maturity Instruction</label>
+            <input type="text" formControlName="maturity" class="form-control"   />
+          
+        </div> -->
+          <div class="form-group">
+              <label>Remark</label>
+              <input type="text" formControlName="remark" class="form-control"   />
+            
+          </div>
+          <div class="form-row">
+              <div class="form-group col">
+                  <label>Amount*</label>
+                  <input type="text" formControlName="amount" class="form-control"   />
+             
+              </div>
+              <div class="form-group col">
+                  <label>Transaction Date*</label>
+                  <input type="date" formControlName="dateOfPayment" class="form-control"   />
+               
+              </div>
+          </div>
+         
+          <div class="text-center">
+              <!-- <button class="btn btn-primary mr-1">Continue</button> -->
+              <button class="btn btn-secondary" type="save" >Save</button>
+          </div>
+      </form>
   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-10 col-lg-8 col-md-8 ml-auto">
+        <div class="row align-items-center mb-5">
+          <div class="col-xl-12">
+           <br>
+             <div id="accordion">
+              <div class='alert alert-info'>
+                <h3  >Save RTGS Payment</h3>
+               </div> 
+<div class="card m-3"  >
+   
+  <div class="card-body">
+      <form [formGroup]="saveTransferForm" (ngSubmit)="saveTransferThroughRTGS()">
+          <div class="form-row">
+        
+              <!-- <div class="form-group col-6">
+                  <label>From Account</label>
+                  <input type="text" formControlName="customerAccountNumber" name="customerAccountNumber" class="form-control"/>
+               
+              </div> -->
+              <div class="form-group col">
+                  <label>To Account*</label>
+                  <select formControlName="beneficiaryAccountNumber" name="beneficiaryAccountNumber" class="form-control">
+                    <option [value]="bene.beneficiaryAccountNumber" *ngFor="let bene of beneficiaries">{{bene.beneficiaryName}} ({{bene.beneficiaryAccountNumber}})</option>
+                  </select><br>                  
+                  <button class="btn btn-primary" (click)="addBenificiary()" >Add Benificiary</button>
+              </div>
+             
+          </div>
+          
+          <!-- <div class="form-group">
+            <label>Maturity Instruction</label>
+            <input type="text" formControlName="maturity" class="form-control"   />
+          
+        </div> -->
+          <div class="form-group">
+              <label>Remark</label>
+              <input type="text" formControlName="remark" class="form-control"   />
+            
+          </div>
+          <div class="form-row">
+              <div class="form-group col">
+                  <label>Amount*</label>
+                  <input type="text" formControlName="amount" class="form-control"   />
+             
+              </div>
+              <div class="form-group col">
+                  <label>Transaction Date*</label>
+                  <input type="date" formControlName="dateOfPayment" class="form-control"   />
+               
+              </div>
+          </div>
+         
+          <div class="text-center">
+
+              <!-- <button   class="btn btn-primary mr-1">Continue</button> -->
+              <button  class="btn btn-secondary"  >Save</button>  
+          </div>
+      </form>
+                      <!-- <button  class="btn btn-secondary" (click)="save()" >Save</button>    -->
+
   </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 

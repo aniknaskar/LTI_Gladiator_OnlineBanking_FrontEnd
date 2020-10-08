@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { MustMatch } from './../MustMatch';
 import { UserService } from '../user.service';
 import { User } from '../userModel';
+import { OTP } from '../otp';
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-register-internet-banking',
@@ -15,7 +17,7 @@ export class RegisterInternetBankingComponent implements OnInit {
   registerForm: FormGroup;
   submitted: boolean = false;
   invalidRegister: boolean = false;
-  otp: string = "";
+  otp: OTP;
   getAccountNo: string;
   constructor(private formBuilder: FormBuilder, private router: Router, private service: UserService) { }
 
@@ -37,7 +39,7 @@ export class RegisterInternetBankingComponent implements OnInit {
   }
 
   onSubmit() {
-    alert("Successfully registered");
+    // alert("Successfully registered");
     let accountNumber: string = this.registerForm.controls.accountNumber.value;
     localStorage.setItem("accountNumber", accountNumber);
     this.submitted = true;
@@ -52,8 +54,18 @@ export class RegisterInternetBankingComponent implements OnInit {
       this.service.createInternetBankingUser(this.registerForm.value).subscribe(
         data => {
           this.otp = data;
-          localStorage.setItem("otp", this.otp);
-          this.router.navigate(['otp-registration']);
+          alert(this.otp.otp);
+          if (this.otp.otp == "ACCOUNT NUMBER DOESN'T EXIST") {
+            alert(this.otp.otp);
+          }
+          else if (this.otp.otp == "ALREADY REGISTERED") {
+            alert(this.otp.otp);
+          }
+          else if(this.otp.otp!=null) {
+            localStorage.setItem("otp", this.otp.otp);
+            localStorage.setItem("internetBankingId",this.otp.internetBankingId);
+            this.router.navigate(['otp-registration']);
+          }
         }
       );
     }

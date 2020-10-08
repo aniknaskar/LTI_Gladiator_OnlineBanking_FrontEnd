@@ -53,7 +53,7 @@
                   
                       <label for="adminLoginPassword"> Password</label>
                       <input formControlName="adminPassword" placeholder="Password" name="adminPassword" 
-                          class="form-control" id="adminPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="border-radius: 0.45cm;">
+                          class="form-control" id="adminPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="border-radius: 0.45cm;" type="password">
                       <div *ngIf="submitted && adminLoginForm.controls.adminPassword.errors" class="error">
                           <div class="text-danger" *ngIf="adminLoginForm.controls.adminPassword.errors.required">Login Password is required</div>
                           <div class="text-danger" *ngIf="adminLoginForm.controls.adminPassword.errors.pattern"> Must contain at least
