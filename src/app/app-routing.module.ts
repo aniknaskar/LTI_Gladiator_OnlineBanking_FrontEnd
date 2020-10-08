@@ -25,7 +25,9 @@ import { TransactionSuccessfulComponent } from './transaction-successful/transac
 import { TransactionPasswordComponent } from './transaction-password/transaction-password.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SavedPaymentsComponent } from './saved-payments/saved-payments.component';
- 
+import { ContactComponent } from './contact/contact.component';
+import { HelpComponent } from './help/help.component';
+import { SessionExpiredComponent } from './session-expired/session-expired.component'; 
 
 const routes: Routes = [
   {path : '', component :  HomePageComponent},
@@ -53,8 +55,11 @@ const routes: Routes = [
   {path : 'transaction-successful', component :  TransactionSuccessfulComponent },
   {path : 'transaction-password', component :  TransactionPasswordComponent },
   {path : 'about-us', component :  AboutUsComponent },
-  {path : 'save-payment', component :  SavedPaymentsComponent }
-
+  {path : 'save-payment', component :  SavedPaymentsComponent },
+  {path : 'save-payment', component :  SavedPaymentsComponent },
+  {path : 'contact', component :  ContactComponent },
+  {path : 'help', component :  HelpComponent },
+  {path : 'session-expired', component :  SessionExpiredComponent}
 ];
 
 @NgModule({

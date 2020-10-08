@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MustMatch } from '../MustMatch';
 import { UserService } from '../user.service';
 
 @Component({
@@ -23,23 +24,34 @@ export class ChangeInternetBankingPasswordsComponent implements OnInit {
       loginPassword:['',Validators.required],
       confirmLoginPassword:['',Validators.required]
        
-     });
+     }, {
+      validator: [MustMatch('loginPassword', 'confirmLoginPassword')],
+  
+    });
 
      this.changeTransactionPasswordForm=  this.fb.group({
       transactionPassword:['',Validators.required],
       confirmTransactionPassword:['',Validators.required]
        
-     });
+     }, {
+      validator: [MustMatch('transactionPassword', 'confirmTransactionPassword')],
+  
+    });
   }
 
   loginPass(){
-    alert("login password Changed");
+
+
+
+    
     if(this.changeLoginPasswordForm.invalid)
     {
+      alert("Fill the Required Fields")
       return;
     }
     else
     {
+      alert("login password Changed");
       this.userservice.changeLoginPassword(this.changeLoginPasswordForm.value).subscribe(data=>
         {
           this.router.navigate(['home-page']);
@@ -51,14 +63,17 @@ export class ChangeInternetBankingPasswordsComponent implements OnInit {
   transactionPass(){
 
     
-    alert("transacion password Changed");
+    
 
     if(this.changeTransactionPasswordForm.invalid)
     {
+      alert("Fill the Required Fields")
+
       return;
     }
 
     else{
+      alert("transacion password Changed");
       this.userservice.changeTransactionPassword(this.changeTransactionPasswordForm.value).subscribe(data=>
         {
           this.router.navigate(['home-page']);

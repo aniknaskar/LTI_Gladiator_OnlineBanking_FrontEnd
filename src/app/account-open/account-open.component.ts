@@ -22,7 +22,7 @@ export class AccountOpenComponent implements OnInit {
     this.newAccountForm = this.formBuilder.group({
       title: ['', Validators.required],
       firstName: ['', Validators.required],
-      middleName: ['', Validators.required],
+      middleName: [],
       lastName: ['', Validators.required],
       fatherName: ['', Validators.required],
       dob: ['', Validators.required],
@@ -52,19 +52,19 @@ export class AccountOpenComponent implements OnInit {
     //alert("FormSubmtted");
     this.submitted = true;
     if (this.newAccountForm.invalid) {
-      alert("Fill the required Fields");
+      alert("Fill the required Fields *");
       return;
     }
     this.service.createNewUser(this.newAccountForm.value).subscribe(
       data => {
-        this.router.navigate(['home-page']);
+         this.router.navigate(['home-page']);
       }
     );
   }
 
-  // home(){
-  //   this.router.navigate(['home-page']);
-  // }
+   ok(){
+     this.router.navigate(['home-page']);
+    }
 
   // newAccount(){
   //   this.router.navigate(['account-open']);

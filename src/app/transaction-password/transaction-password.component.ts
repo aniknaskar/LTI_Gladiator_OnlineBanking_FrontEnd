@@ -47,7 +47,7 @@ export class TransactionPasswordComponent implements OnInit {
 
       alert("Inside on submit"+localStorage.getItem("modeOfTransaction"))
       this.transaction.modeOfTransaction=localStorage.getItem("modeOfTransaction");
-      this.transaction.dateOfPayment=localStorage.getItem("dateOfPayment")
+      // this.transaction.dateOfPayment=localStorage.getItem("dateOfPayment")
       this.transaction.amount=localStorage.getItem("amount");
       this.transaction.beneficiaryAccountNumber=localStorage.getItem("beneficiaryAccountNumber");
       this.transaction.customerAccountNumber=localStorage.getItem("accountNumber");
@@ -61,6 +61,10 @@ export class TransactionPasswordComponent implements OnInit {
       });
       
       //  alert("Successfully registered");
+    }
+
+    else{
+      this.invalidVerify=true;
     }
 
 

@@ -37,7 +37,11 @@
                 <input formControlName="accountNumber" placeholder="accountNumber" name="accountNumber" 
                       class="form-control" id="accountNumber" pattern="[0-9]{8,10}" style="border-radius: 0.5cm;">
                 <div *ngIf=" registerForm.controls.accountNumber.errors" class="error">
+<<<<<<< HEAD
                     <div class="text-danger" *ngIf="(registerForm.controls.accountNumber.errors.required) && ((registerForm.controls.title.touched || registerForm.controls.title.dirty))">Account Number is required</div>
+=======
+                    <div class="text-danger" *ngIf="registerForm.controls.accountNumber.errors.required">Account Number is required</div>
+>>>>>>> 2fd052cc4b8b13148be3c4bf4f8af756f8427b5b
                     <div class="text-danger" *ngIf="registerForm.controls.accountNumber.errors.pattern">must contain 10 numbers between 0 to 10</div>
                   </div>
               </div>
@@ -55,7 +59,11 @@
                     <input formControlName="loginPassword" placeholder="Login Password" name="loginPassword" 
                         class="form-control" id="loginPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="border-radius: 0.5cm;" type="password">
                     <div *ngIf="registerForm.controls.loginPassword.errors" class="error">
+<<<<<<< HEAD
                         <div class="text-danger" *ngIf="(registerForm.controls.loginPassword.errors.required) && ((registerForm.controls.title.touched || registerForm.controls.title.dirty))">Login Password is required</div>
+=======
+                        <div class="text-danger" *ngIf="registerForm.controls.loginPassword.errors.required">Login Password is required</div>
+>>>>>>> 2fd052cc4b8b13148be3c4bf4f8af756f8427b5b
                         <div class="text-danger" *ngIf="registerForm.controls.loginPassword.errors.pattern"> Must contain at least
                                one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
 

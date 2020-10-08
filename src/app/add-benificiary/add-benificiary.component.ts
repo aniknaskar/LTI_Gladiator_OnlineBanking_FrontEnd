@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MustMatch } from '../MustMatch';
 import { UserService } from '../user.service';
 
 @Component({
@@ -22,21 +23,35 @@ export class AddBenificiaryComponent implements OnInit {
         beneficiaryName:['',Validators.required],
         beneficiaryAccountNumber:['',Validators.required],
         beneficiaryConfirmAccountNumber:['',Validators.required],
-        beneficiaryNickName:['',Validators.required]
-   });
+         beneficiaryNickName:[]
+   }, {
+    validator: [MustMatch('beneficiaryAccountNumber', 'beneficiaryConfirmAccountNumber')],
+
+  });
   }
 
   addBenificiary(){
-    alert("beneficiary added");
+    
+
+    // localStorage.setItem("benificiaryName",this.benificiaryForm.controls.benificiaryName.value);
+    // localStorage.setItem("beneficiaryAccountNumber",this.benificiaryForm.controls.beneficiaryAccountNumber.value);
+    // localStorage.setItem("beneficiaryNickName",this.benificiaryForm.controls.beneficiaryNickName.value);
+
     this.submitted = true;
 
     if(this.benificiaryForm.invalid){
+      alert("Fill the required fields")
       return;
     }
+    else
+    {
     this.userService.addBenificiaryAccount(this.benificiaryForm.value)
-      .subscribe( data => {
-        this.router.navigate(['after-login']);
+      .subscribe( data => 
+        {
+          alert("beneficiary added");
+        this.router.navigate(['view-beneficiary']);
       });
+    }
   }
 
   logout(){

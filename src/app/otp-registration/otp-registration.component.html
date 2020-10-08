@@ -20,21 +20,43 @@
                <div class="form-group">
                   <label for="otp">OTP</label>
                   <input formControlName="otp" placeholder="Enter OTP" name="otp" 
-                        class="form-control" id="otp" pattern="[0-9]{4}" style="border-radius: 0.45cm;">
+                        class="form-control" id="otp" pattern="[0-9]{3,4}" style="border-radius: 0.45cm;">
                   <div *ngIf="submitted && otpForm.controls.otp.errors" class="error">
                       <div class="text-danger" *ngIf="otpForm.controls.otp.errors.required">otp is required</div>
-                      <div class="text-danger" *ngIf="otpForm.controls.otp.errors.pattern">must contain 4 numbers between 0 to 10</div>
+                      <!-- <div class="text-danger" *ngIf="otpForm.controls.otp.errors.pattern">must contain 4 numbers between 0 to 10</div> -->
                     </div>
                 </div>
 
-                <button class="btn btn-info mr-1" type="submit" style="border-radius: 0.5cm;">Submit</button>
+               <br> <button class="btn btn-info mr-1" type="submit" style="border-radius: 0.5cm;" >Submit</button>
                
                 <div *ngIf="invalidVerify" class="error">
                   <div class="text-danger">User ID or OTP is incorrect</div>
                 </div>
 
   
-</form>
+            </form>
+<!-- 
+            <div *ngIf=" (flag==0)" class="modal fade" id="sign-out">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Registered Successfully</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+     
+                  <div class="modal-footer" >
+                    <button type="button" class="btn btn-success" data-dismiss="modal" (click)="ok()">OK</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="logout()">Logout</button>  
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+             <div *ngIf="(flag==1)" class="text-danger">
+              Wrong Otp entered
+            </div>  
+
+
       </div>  
       </div>
       </section>

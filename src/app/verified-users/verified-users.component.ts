@@ -1,3 +1,9 @@
+import { UserService } from './../user.service';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { userInfo, userVerifiedInfo } from './../userModel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +13,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifiedUsersComponent implements OnInit {
 
-  constructor() { }
+  userData:  userInfo[];
+  submitted: boolean = false;
+  registerForm:FormGroup; 
+  
+  constructor(private router: Router, private userService: UserService, private http: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.userService.getVerifiedUsers()
+    .subscribe(data=> {
+      this.userData = data;
+    });
+
   }
-
+  
 }
