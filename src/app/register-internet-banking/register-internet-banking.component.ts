@@ -39,7 +39,7 @@ export class RegisterInternetBankingComponent implements OnInit {
   }
 
   onSubmit() {
-    // alert("Successfully registered");
+    
     let accountNumber: string = this.registerForm.controls.accountNumber.value;
     localStorage.setItem("accountNumber", accountNumber);
     this.submitted = true;
@@ -71,48 +71,7 @@ export class RegisterInternetBankingComponent implements OnInit {
     }
   }
 
-  // let accountNumber: string = this.registerForm.controls.accountNumber.value;  
-  // this.service.getUserByAccountNo(accountNumber).subscribe(data =>{
-  //   this.getAccountNo= data; 
-
-  //   alert(JSON.stringify(this.getAccountNo));
-  //   alert(JSON.stringify(this.registerForm.controls.accountNumber.value));
-
-  //if(this.registerForm.controls.accountNumber.value == this.getAccountNo){
-  //localStorage.setItem("accountNumber",this.registerForm.controls.accountNumber.value);
-
-
-
-  //}
-
-  // else{
-  //   this.invalidRegister=true;
-  // }
-
-
-
-  // if(this.registerForm.controls.accountNumber.value== "12345678")
-  //   this.router.navigate(['otp-registration']);  //for otp
-
-  // else
-  //   this.invalidRegister = true;
-
-
-
-
-
-  // this.router.navigate(['/home-page']);
-
-  // this.service.createInternetBankingUser(this.registerForm.value)
-  // .subscribe( data => {
-
-  //   this.router.navigate(['/home-page']);
-
-  // });
-
-
-
-
+ 
 
 
 
